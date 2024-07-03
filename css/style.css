@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Poppins&display=swap'); */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}
+
+:root {
+    --primary-color: #0866d9;
+    --font-size: 20px;
+    --width-l: 1200px;
+}
+
+header {
+    position: relative;
+}
+
+header img {
+    width: 100%;
+}
+
+header h1 {
+    position: absolute;
+    top: 30%;
+    right: 5%;
+    color: white;
+    font-size: 10vw;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+.width-l {
+    max-width: var(--width-l);
+    margin: 0 auto;
+}
+
+nav {
+    background-color: var(--primary-color);
+    /* margin-top: -8px; */
+    height: 80px;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+}
+
+.width-l {
+    max-width: var(--width-l);
+    margin: 0 auto;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    gap: 10vw;
+}
+
+a {
+    text-decoration: none;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-size: var(--font-size);
+}
+
+nav a:hover {
+    border-bottom: 4px solid white;
+}
