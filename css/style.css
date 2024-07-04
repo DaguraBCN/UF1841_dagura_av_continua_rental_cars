@@ -1,3 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Trade+Winds&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}
+
+:root {
+     --width-l: 1200px;
+}
+
 body, html {
     margin: 0;
     padding: 0;
@@ -5,28 +18,59 @@ body, html {
     font-family: Arial, sans-serif;
 }
 
+h1 {
+    font-family: "Trade Winds", system-ui;
+    height: 9vw;
+    color: #eec886c2;
+    position: absolute;
+}
+
+h2 {
+    height: 3.5em;
+    color: #a39d5c;
+}
+
+h3 {
+    height: 2.5em;
+    color: #d1ca78;
+}
+
 header {
     position: relative;
-    height: 10vh;
+    /*height: 40vh;
+    width: 1200px;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #fff;
+    color: #fff; */
 }
 
 .header-img {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
+    max-width: var(--width-l);
+    /* width: 100%; */
+    /* height: 100%; */
+    /* object-fit: cover; */
+    z-index: -1; 
+    display: block;
+    background-position: left;
+    /* background-size: cover; */
+    background-size: contain;
+    background-repeat: no-repeat;
+
+}
+
+.width-l {
+    max-width: var(--width-l);
+    margin: 0 auto;
 }
 
 .logo {
-    font-size: 1.5em;
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para destacar el texto */
+    font-size: 2vw;
+    /* background-color: rgba(0, 0, 0, 0.5);  */
+    /*Fondo semitransparente para destacar el texto*/
     padding: 0.5em;
 }
 
@@ -69,6 +113,10 @@ main {
     grid-template-columns: 1fr;
     gap: 20px;
 
+}
+
+main p {
+    height: 1.25em;
 }
 
 .grid-container {
