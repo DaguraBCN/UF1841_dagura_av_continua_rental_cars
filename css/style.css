@@ -6,6 +6,7 @@ body {
     padding: 0;
 }
 
+/* Damos estilo a la cabecera de las páginas */
 header {
     height: 10rem;
     background-color: #333;
@@ -44,6 +45,7 @@ header {
     object-fit: cover;
 }
 
+/* Damos estilo al menú de navegación */
 nav {
     background-color: #444;
     color: #fff;
@@ -77,6 +79,7 @@ main {
     padding: 2rem;
 }
 
+/* Damos estilo a la información, la galeria de vehiculos y los anuncios */
 .info, .ads {
     margin-bottom: 2rem;
 }
@@ -95,6 +98,12 @@ main {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Damos estilo a la lista de coches, probamos en modo grid y en modo lista */
+.car-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 2rem;
+}
 .car-list {
     margin-bottom: 2rem;
 }
@@ -151,6 +160,7 @@ main {
     background-color: #333;
 }
 
+/* Damos estilo a la ficha técnica */
 .car-details {
     display: flex;
     flex-direction: column;
@@ -193,6 +203,20 @@ main {
 
 .car-specs p {
     margin: 0.5rem 0;
+    
+}
+.car-property {
+    display: flex;
+    align-items: center;
+
+}
+
+.car-specs img {
+    width: 50px;
+    height: auto;
+    object-fit: cover;
+    /* border-radius: 8px; */
+    margin-right: 1rem;
 }
 
 .car-specs button {
@@ -210,11 +234,21 @@ main {
     background-color: #333;
 }
 
+/* Damos estilo al pie para que este en 3 columnas siendo la primera columna el doble de ancha que las otras dos */
 footer {
     display: flex;
     background-color: #222;
     color: #fff;
     padding: 2rem;
+}
+footer a {
+    text-decoration: none;
+    color: #fff
+}
+footer ul li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .footer-column {
