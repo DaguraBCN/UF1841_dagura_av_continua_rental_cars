@@ -31,78 +31,54 @@
     </nav>
 
     <main>
-      <section class="form-section">
-        <h2>Formulario de Alquiler de Vehículos</h2>
-        <form action="procesar-alquiler.php" method="POST" id="form-alquiler">
-          <!-- Información del cliente -->
-          <div class="form-group">
-            <label for="nombre">Nombre</label>
-            <input type="text" id="nombre" name="nombre" required />
-          </div>
-          <div class="form-group">
-            <label for="apellidos">Apellidos</label>
-            <input type="text" id="apellidos" name="apellidos" required />
-          </div>
-          <div class="form-group">
-            <label for="dni">DNI</label>
-            <input type="text" id="dni" name="dni" required />
-          </div>
-
-          <!-- Información del conductor -->
-          <div class="form-group">
-            <label for="carnet">Carnet de conducir</label>
-            <input type="text" id="carnet" name="carnet" required />
-          </div>
-          <div class="form-group">
-            <label for="conductor-diferente">¿El conductor es diferente?</label>
-            <input type="checkbox" id="conductor-diferente" name="conductor-diferente" />
-          </div>
-          <div id="conductor-datos" style="display:none;">
-            <div class="form-group">
-              <label for="nombre-conductor">Nombre del conductor</label>
-              <input type="text" id="nombre-conductor" name="nombre-conductor" />
-            </div>
-            <div class="form-group">
-              <label for="apellidos-conductor">Apellidos del conductor</label>
-              <input type="text" id="apellidos-conductor" name="apellidos-conductor" />
-            </div>
-          </div>
-
-          <!-- Vehículos disponibles -->
-          <div class="form-group">
-            <label for="vehiculo">Vehículo</label>
-            <select id="vehiculo" name="vehiculo" required>
-              <!-- Aquí se llenarán dinámicamente los vehículos desde la base de datos -->
-              <option value="">Seleccione un vehículo</option>
-              <!-- Ejemplo de opción estática (se generarán dinámicamente desde la BBDD) -->
-              <option value="1">Fiat 500 Cabrio</option>
-              <option value="2">Jeep Wrangler</option>
-              <!-- Los valores reales se rellenarán desde PHP/MySQL -->
-            </select>
-          </div>
-
-          <!-- Fechas de alquiler -->
-          <div class="form-group">
-            <label for="fecha-inicio">Fecha de inicio del alquiler</label>
-            <input type="date" id="fecha-inicio" name="fecha-inicio" required />
-          </div>
-          <div class="form-group">
-            <label for="fecha-fin">Fecha de fin del alquiler</label>
-            <input type="date" id="fecha-fin" name="fecha-fin" required />
-          </div>
-
-          <!-- Coste total -->
-          <div class="form-group">
-            <label for="coste">Coste Total del Alquiler</label>
-            <input type="text" id="coste" name="coste" readonly />
-          </div>
-
-          <!-- Botón para tramitar el alquiler -->
-          <div class="form-group">
-            <button type="submit">Tramitar Alquiler</button>
-          </div>
-        </form>
-      </section>
+        <section class="form-section">
+            <h2>Formulario de Alquiler de Vehículos</h2>
+            <form action="procesar-alquiler.php" method="POST" class="form-alquiler">
+              <div class="form-group">
+                <label for="nombre">Nombre Completo</label>
+                <input type="text" id="nombre" name="nombre" required />
+              </div>
+      
+              <div class="form-group">
+                <label for="email">Correo Electrónico</label>
+                <input type="email" id="email" name="email" required />
+              </div>
+      
+              <div class="form-group">
+                <label for="telefono">Teléfono</label>
+                <input type="tel" id="telefono" name="telefono" required />
+              </div>
+      
+              <div class="form-group">
+                <label for="vehiculo">Selecciona un Vehículo</label>
+                <select id="vehiculo" name="vehiculo" required>
+                  <option value="">Seleccionar</option>
+                  <option value="sedan">Sedán</option>
+                  <option value="suv">SUV</option>
+                  <option value="hatchback">Hatchback</option>
+                </select>
+              </div>
+      
+              <div class="form-group">
+                <label for="fecha-inicio">Fecha de Inicio del Alquiler</label>
+                <input type="date" id="fecha-inicio" name="fecha-inicio" required />
+              </div>
+      
+              <div class="form-group">
+                <label for="fecha-fin">Fecha de Fin del Alquiler</label>
+                <input type="date" id="fecha-fin" name="fecha-fin" required />
+              </div>
+      
+              <div class="form-group">
+                <label for="comentarios">Comentarios</label>
+                <textarea id="comentarios" name="comentarios" rows="4"></textarea>
+              </div>
+      
+              <div class="form-group">
+                <button type="submit" class="btn-submit">Enviar</button>
+              </div>
+            </form>
+          </section>
     </main>
 
     <footer>
