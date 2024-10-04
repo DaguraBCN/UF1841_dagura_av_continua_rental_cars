@@ -27,6 +27,9 @@
         <li><a href="coches.html">Coches</a></li>
         <li><a href="#">Motos</a></li>
         <li><a href="#">Furgonetas</a></li>
+        <li><a href="form-alquiler.html">Alquiler</a></li>
+         <!-- Enlace visible solo para el administrador -->
+         <li class="admin-only"><a href="insert-flota.html">Nuevos vehículos</a></li>
       </ul>
     </nav>
 
@@ -82,5 +85,12 @@
         <p>Chat en vivo</p>
       </div>
     </footer>
+    <!-- <script>
+      // Simulación de lógica de administrador
+      const esAdmin = true; // Esto debería depender de la autenticación del usuario
+      if (!esAdmin) {
+        document.querySelector('.admin-only').style.display = 'none';
+      }
+    </script> -->
   </body>
 </html>
