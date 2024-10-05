@@ -270,88 +270,113 @@ footer ul li {
 
 /* General styling for the form */
 .form-section {
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-section h2 {
+  text-align: center;
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.form-alquiler {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  font-size: 16px;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #0066cc;
+  box-shadow: 0 0 5px rgba(0, 102, 204, 0.5);
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+/* Row styling for email and phone */
+.form-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-row .form-group {
+  width: 48%;
+}
+
+/* Submit button styling */
+.btn-submit {
+  padding: 12px 20px;
+  font-size: 18px;
+  color: #fff;
+  background-color: #0066cc;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+  background-color: #004a99;
+}
+
+/* Estilo responsivo */
+@media (max-width: 768px) {
+  .form-section {
+    padding: 15px;
   }
-  
-  .form-section h2 {
-    text-align: center;
-    font-size: 28px;
+
+  .form-row {
+    flex-direction: column;
+  }
+
+  .form-row .form-group {
+    width: 100%;
+  }
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 33px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.input--style-2 {
+    padding: 9px 0;
     color: #333;
-    margin-bottom: 20px;
-  }
-  
-  .form-alquiler {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-  
-  .form-group {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 15px;
-  }
-  
-  .form-group label {
     font-size: 16px;
-    margin-bottom: 5px;
     font-weight: bold;
-    color: #333;
-  }
-  
-  .form-group input,
-  .form-group select,
-  .form-group textarea {
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #fff;
-  }
-  
-  .form-group input:focus,
-  .form-group select:focus,
-  .form-group textarea:focus {
-    outline: none;
-    border-color: #0066cc;
-    box-shadow: 0 0 5px rgba(0, 102, 204, 0.5);
-  }
-  
-  .form-group textarea {
-    resize: vertical;
-  }
-  
-  /* Submit button styling */
-  .btn-submit {
-    padding: 12px 20px;
-    font-size: 18px;
-    color: #fff;
-    background-color: #0066cc;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .btn-submit:hover {
-    background-color: #004a99;
-  }
-  
-  /* Estilo responsivo */
-  @media (max-width: 768px) {
-    .form-section {
-      padding: 15px;
-    }
-  
-    .form-group {
-      flex-direction: column;
-    }
-  }
-  
-  
+}
