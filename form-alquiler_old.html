@@ -31,7 +31,7 @@
   <main>
     <section class="form-section">
       <h2>Formulario de Alquiler de Vehículos</h2>
-      <form action="#" method="POST" class="form-alquiler" id="form-alquiler">
+      <form action="procesar-alquiler.php" method="POST" class="form-alquiler">
 
         <!-- Nombre y Apellidos en la misma fila -->
         <div class="form-row">
@@ -127,110 +127,21 @@
         <div class="form-row">
           <div class="form-group">
             <label for="coste-total">Coste Total del Alquiler</label>
-			<span id="coste-total" class="coste-total-display">0 €</span>
+            <!-- <input type="text" id="coste-total" name="coste-total" readonly /> -->
+            <span id="coste-total" class="coste-total-display">0 €</span>
           </div>
 
           <div class="form-group">
-            <button type="button" class="btn-submit" id="tramitar-btn">Tramitar Alquiler</button>
+            <button type="submit" class="btn-submit">Tramitar Alquiler</button>
           </div>
         </div>
 
       </form>
     </section>
   </main>
-  
-  <!-- Ventana Modal de Registro -->
-<div id="modal-registro" class="modal">
-  <div class="modal-content">
-      <span class="close">&times;</span>
-      <h2>Registro de Cliente</h2>
-      <form id="form-registro" action="procesar_registro.php" method="POST">
-          <div class="form-group">
-              <label for="nombre_cliente">Nombre:</label>
-              <input type="text" id="nombre_cliente" name="nombre_cliente" maxlength="25" required>
-          </div>
-          <div class="form-group">
-              <label for="apellido_cliente">Apellido:</label>
-              <input type="text" id="apellido_cliente" name="apellido_cliente" maxlength="50" required>
-          </div>
-          <div class="form-group">
-              <label for="dni_conductor">DNI:</label>
-              <input type="text" id="dni_conductor" name="dni_conductor" maxlength="15" required>
-          </div>
-          <div class="form-group">
-              <label for="carnet_conducir">Carnet de Conducir:</label>
-              <input type="text" id="carnet_conducir" name="carnet_conducir" maxlength="15" required>
-          </div>
-          <div class="form-group">
-              <label for="tipo_cliente">Tipo de Cliente:</label>
-              <select id="tipo_cliente" name="tipo_cliente" required>
-                  <option value="particular">Particular</option>
-                  <option value="empresa">Empresa</option>
-              </select>
-          </div>
-          <div class="form-group" id="cif_empresa_group" style="display: none;">
-              <label for="cif_empresa">CIF Empresa:</label>
-              <input type="text" id="cif_empresa" name="cif_empresa" maxlength="15">
-          </div>
-          <div class="form-group">
-              <label for="email_cliente">Email:</label>
-              <input type="email" id="email_cliente" name="email_cliente" maxlength="100" required>
-          </div>
-          <div class="form-group">
-              <label for="telefono">Teléfono:</label>
-              <input type="text" id="telefono" name="telefono" maxlength="15" required>
-          </div>
-          <div class="form-group">
-              <label for="poblacion_residencia">Población de Residencia:</label>
-              <input type="text" id="poblacion_residencia" name="poblacion_residencia" maxlength="15">
-          </div>
-          <div class="form-group">
-              <label for="id_pais">País de Residencia:</label>
-              <select id="id_pais" name="id_pais" required>
-                  <!-- Aquí se debe llenar con los países desde la base de datos -->
-                  <option value="1">España</option>
-                  <option value="2">México</option>
-                  <option value="3">Argentina</option>
-                  <!-- Agregar más opciones de acuerdo con los datos en la tabla paises -->
-              </select>
-          </div>
-          <div class="form-group">
-              <label for="password_cliente">Contraseña:</label>
-              <input type="password" id="password_cliente" name="password_cliente" maxlength="10" required>
-          </div>
-          <div class="form-group">
-              <button type="submit" class="btn-submit">Registrarse</button>
-          </div>
-      </form>
-  </div>
-</div>
 
-<!-- Ventana Modal de Login -->
-<div id="modal-login" class="modal">
-  <div class="modal-content">
-      <span class="close">&times;</span>
-      <h2>Iniciar Sesión</h2>
-      <form action="procesar_login.php" method="POST">
-          <div class="form-group">
-              <label for="email_login">Email:</label>
-              <input type="email" id="email_login" name="email_login" required>
-          </div>
-          <div class="form-group">
-              <label for="password_login">Contraseña:</label>
-              <input type="password" id="password_login" name="password_login" required>
-          </div>
-          <div class="form-group">
-              <button type="submit" class="btn-submit">Iniciar Sesión</button>
-          </div>
-      </form>
-      <p>¿No tienes cuenta? <a href="#" id="registro-link">Regístrate aquí</a></p>
-  </div>
-</div>
-
-<footer>
-									  
+  <footer>
     <div class="footer-column column1">
-										
       <h2>Sobre Nosotros</h2>
       <p>
         Somos una empresa dedicada al alquiler de vehículos con más de 10 años de experiencia.
@@ -246,12 +157,39 @@
     <div class="footer-column column3">
       <h2>Soporte</h2>
       <p>Atención al cliente 24/7</p>
-			 
       <p>Chat en vivo</p>
     </div>
-    <p>&copy; 2024 Dagura Cars Inc. Todos los derechos reservados.</p>
   </footer>
-  <script src="js/script.js"></script>		   
+
+  <!-- Script para mostrar/ocultar campos del conductor -->
+  <script>
+    document.getElementById('conductor-diferente').addEventListener('change', function() {
+      const datosConductor = document.getElementById('datos-conductor');
+      if (this.checked) {
+        datosConductor.style.display = 'block';
+      } else {
+        datosConductor.style.display = 'none';
+      }
+    });
+
+    // Cálculo del coste total
+    document.getElementById('fecha-fin').addEventListener('change', function() {
+      var fechaInicio = document.getElementById('fecha-inicio').value;
+      var fechaFin = document.getElementById('fecha-fin').value;
+      if (fechaInicio && fechaFin) {
+        var startDate = new Date(fechaInicio);
+        var endDate = new Date(fechaFin);
+        var diffTime = Math.abs(endDate - startDate);
+        var diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)); 
+        
+        // Suponiendo una tarifa diaria de ejemplo
+        var tarifaDiaria = 50; // Esto debería venir de la base de datos para cada vehículo
+        var totalCoste = diffDays * tarifaDiaria;
+        // document.getElementById('coste-total').value = totalCoste + " €";
+        document.getElementById('coste-total').textContent = totalCoste + " €";
+
+      }
+    });
+  </script>
 </body>
 </html>
-
