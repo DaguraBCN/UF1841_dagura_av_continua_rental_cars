@@ -132,7 +132,8 @@
         <div class="form-row">
           <div class="form-group">
             <label for="coste-total">Coste Total del Alquiler</label>
-            <input type="text" id="coste-total" name="coste-total" readonly />
+            <!-- <input type="text" id="coste-total" name="coste-total" readonly /> -->
+            <span id="coste-total" class="coste-total-display">0 €</span>
           </div>
 
           <div class="form-group">
@@ -189,7 +190,9 @@
         // Suponiendo una tarifa diaria de ejemplo
         var tarifaDiaria = 50; // Esto debería venir de la base de datos para cada vehículo
         var totalCoste = diffDays * tarifaDiaria;
-        document.getElementById('coste-total').value = totalCoste + " €";
+        // document.getElementById('coste-total').value = totalCoste + " €";
+        document.getElementById('coste-total').textContent = totalCoste + " €";
+
       }
     });
   </script>

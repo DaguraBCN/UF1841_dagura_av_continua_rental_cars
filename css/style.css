@@ -339,7 +339,7 @@ footer ul li {
 
 /* Submit button styling */
 .btn-submit {
-  padding: 12px 20px;
+  padding: 20px 20px;
   font-size: 18px;
   color: #fff;
   background-color: #0066cc;
@@ -350,7 +350,8 @@ footer ul li {
 }
 
 .btn-submit:hover {
-  background-color: #004a99;
+  /* background-color: #004a99; */
+  background: linear-gradient(to left, rgb(0, 26, 255), 60%, cyan);
 }
 
 /* Estilo responsivo */
@@ -366,6 +367,11 @@ footer ul li {
   .form-row .form-group {
     width: 100%;
   }
+
+  .coste-total-display {
+    font-size: 20px;
+    padding: 8px 16px;
+  }
 }
 
 .input-group {
@@ -380,3 +386,18 @@ footer ul li {
     font-size: 16px;
     font-weight: bold;
 }
+
+.coste-total-display {
+    font-size: 45px;
+    font-weight: bold;
+    background: linear-gradient(to right, rgb(0, 26, 255), 20%, cyan);
+    color: transparent;
+    background-clip: text;
+    --webkit-background-clip: text;
+    /* background-color: #f0f8ff; 
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: inline-block;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 10px; */
+  }
